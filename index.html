@@ -3,33 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Text Generator</title>
+    <title>Cypriot Speed Camera Fine 💸</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        #text { font-size: 24px; font-weight: bold; margin-top: 20px; }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); display: inline-block; }
+        #fine-reason { font-size: 22px; font-weight: bold; margin-top: 20px; }
+        #fine-amount { font-size: 18px; color: red; margin-top: 10px; }
+        .pay-button { background: #25d366; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; border-radius: 5px; }
     </style>
 </head>
 <body>
-    <h1>Random Text Generator</h1>
-    <p id="text">Loading...</p>
-    <button onclick="generateText()">Generate New Text</button>
+    <div class="container">
+        <h1>🚔 Speeding Violation 🚔</h1>
+        <p id="fine-reason">Calculating your crime...</p>
+        <p id="fine-amount">€0</p>
+        <a id="pay-link" class="pay-button" href="#" target="_blank">Pay Now 💸</a>
+    </div>
 
     <script>
-        const texts = [
-            "The early bird catches the worm.",
-            "Fortune favors the bold.",
-            "A journey of a thousand miles begins with a single step.",
-            "To be or not to be, that is the question.",
-            "Do what you love, and you'll never work a day in your life."
+        const reasons = [
+            "Driving like a taxi driver in rush hour",
+            "Speeding in a school zone at 3 AM",
+            "Looking at your phone more than the road",
+            "Parking like a complete amateur",
+            "Taking roundabouts like a Formula 1 driver",
+            "Not using your turn signal (shame on you)",
+            "Driving 50 km/h in the left lane (why???)",
+            "Playing loud music like it's a club",
+            "Stopping in the middle of the road to chat",
+            "Trying to beat the red light (and failing)"
         ];
 
-        function generateText() {
-            const randomIndex = Math.floor(Math.random() * texts.length);
-            document.getElementById("text").innerText = texts[randomIndex];
+        function generateFine() {
+            const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+            const randomFine = Math.floor(Math.random() * 500) + 10;
+            document.getElementById("fine-reason").innerText = "🚨 Offense: " + randomReason;
+            document.getElementById("fine-amount").innerText = "💰 Fine: €" + randomFine;
+            
+            // Optional: Replace with your real Revolut or PayPal link
+          document.getElementById("pay-link").href = "https://www.revolut.me/andreash?amount=" + randomFine + "&currency=EUR";
+
         }
 
-        // Generate text on page load
-        generateText();
+        generateFine();
     </script>
 </body>
 </html>
