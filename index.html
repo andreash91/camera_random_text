@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #text { font-size: 24px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Random Text Generator</h1>
+    <p id="text">Loading...</p>
+    <button onclick="generateText()">Generate New Text</button>
+
+    <script>
+        const texts = [
+            "The early bird catches the worm.",
+            "Fortune favors the bold.",
+            "A journey of a thousand miles begins with a single step.",
+            "To be or not to be, that is the question.",
+            "Do what you love, and you'll never work a day in your life."
+        ];
+
+        function generateText() {
+            const randomIndex = Math.floor(Math.random() * texts.length);
+            document.getElementById("text").innerText = texts[randomIndex];
+        }
+
+        // Generate text on page load
+        generateText();
+    </script>
+</body>
+</html>
